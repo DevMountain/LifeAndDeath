@@ -7,8 +7,12 @@
 //
 
 #import "MapDetailViewController.h"
+#import "PersonAnnotation.h"
+@import MapKit;
 
-@interface MapDetailViewController ()
+@interface MapDetailViewController () <MKMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -17,6 +21,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self updateWithPerson:self.person];
+}
+
+- (void)updateWithPerson:(Person *)person {
+    self.person = person;
+    
+    if (person.birthPlace) {
+        [self.mapView addAnnotation:[[PersonAnnotation alloc] initWithPerson:person lifeEvent:LifeEventBirth]];
+    }
+    
+    if (person.deathPlace) {
+        [self.mapView addAnnotation:[[PersonAnnotation alloc] initWithPerson:person lifeEvent:LifeEventDeath]];
+    }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"personAnnotation"];
+    
+    annotationView.pinColor = MKPinAnnotationColorPurple;
+    annotationView.animatesDrop = YES;
+    annotationView.canShowCallout = YES;
+    
+    return annotationView;
 }
 
 - (void)didReceiveMemoryWarning {

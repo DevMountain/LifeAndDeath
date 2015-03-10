@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@import CoreLocation;
+@import MapKit;
 
 static NSString * const FirstNameKey = @"firstname";
 static NSString * const LastNameKey = @"lastname";
@@ -15,6 +15,11 @@ static NSString * const BirthDateKey = @"birthdate";
 static NSString * const BirthPlaceKey = @"birthplace";
 static NSString * const DeathDateKey = @"deathdate";
 static NSString * const DeathPlaceKey = @"deathplace";
+
+typedef NS_ENUM(NSUInteger, LifeEvent) {
+    LifeEventBirth,
+    LifeEventDeath,
+};
 
 @interface Person : NSObject
 

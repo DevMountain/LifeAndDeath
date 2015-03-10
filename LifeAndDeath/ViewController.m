@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 #import "PersonController.h"
+#import "MapDetailViewController.h"
 
 @interface ViewController () <UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -34,6 +37,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [PersonController sharedInstance].persons.count;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UITableViewCell *cell = sender;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    if ([segue.identifier isEqualToString:@"personMap"] ) {
+        MapDetailViewController *detailViewController = segue.destinationViewController;
+        detailViewController.person = [PersonController sharedInstance].persons[indexPath.row];
+        [detailViewController updateWithPerson:[PersonController sharedInstance].persons[indexPath.row]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

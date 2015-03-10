@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonController.h"
 
 @interface MapDetailViewController : UIViewController
+
+@property (strong, nonatomic) Person *person;
+
+- (void)updateWithPerson:(Person *)person;
 
 @end

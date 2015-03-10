@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" textLabel="64o-TR-mNf" detailTextLabel="NgK-wP-dif" style="IBUITableViewCellStyleSubtitle" id="sED-CL-JcA">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" textLabel="64o-TR-mNf" detailTextLabel="NgK-wP-dif" style="IBUITableViewCellStyleSubtitle" id="sED-CL-JcA">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sED-CL-JcA" id="bny-le-42C">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -39,6 +39,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="eZQ-fV-M9a" kind="show" identifier="personMap" id="3Sx-YU-umU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -55,6 +58,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="People" id="vzK-VU-zRj"/>
+                    <connections>
+                        <outlet property="tableView" destination="shf-KY-xcM" id="oT3-Lx-Zzs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,6 +80,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l1J-jW-OhB">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eZQ-fV-M9a" id="nWn-Ey-zme"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,6 +93,9 @@
                             <constraint firstItem="l1J-jW-OhB" firstAttribute="bottom" secondItem="Nrw-Ry-0iX" secondAttribute="top" id="mKt-Ne-zcD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="l1J-jW-OhB" id="82g-99-5ZO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htJ-V0-SvM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,6 +17,8 @@
 		68339F5E1AAF26BB005D4E48 /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68339F5D1AAF26BB005D4E48 /* PersonController.m */; };
 		68339F611AAF26D6005D4E48 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 68339F601AAF26D6005D4E48 /* Person.m */; };
 		68339F641AAF30BA005D4E48 /* MapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68339F631AAF30BA005D4E48 /* MapDetailViewController.m */; };
+		68339F661AAF339A005D4E48 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68339F651AAF339A005D4E48 /* MapKit.framework */; };
+		68339F691AAF3735005D4E48 /* PersonAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 68339F681AAF3735005D4E48 /* PersonAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		68339F601AAF26D6005D4E48 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		68339F621AAF30BA005D4E48 /* MapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetailViewController.h; sourceTree = "<group>"; };
 		68339F631AAF30BA005D4E48 /* MapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDetailViewController.m; sourceTree = "<group>"; };
+		68339F651AAF339A005D4E48 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		68339F671AAF3735005D4E48 /* PersonAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonAnnotation.h; sourceTree = "<group>"; };
+		68339F681AAF3735005D4E48 /* PersonAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68339F661AAF339A005D4E48 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +78,7 @@
 		68339F2A1AAF26A7005D4E48 = {
 			isa = PBXGroup;
 			children = (
+				68339F651AAF339A005D4E48 /* MapKit.framework */,
 				68339F351AAF26A7005D4E48 /* LifeAndDeath */,
 				68339F4F1AAF26A7005D4E48 /* LifeAndDeathTests */,
 				68339F341AAF26A7005D4E48 /* Products */,
@@ -101,6 +108,8 @@
 				68339F5D1AAF26BB005D4E48 /* PersonController.m */,
 				68339F5F1AAF26D6005D4E48 /* Person.h */,
 				68339F601AAF26D6005D4E48 /* Person.m */,
+				68339F671AAF3735005D4E48 /* PersonAnnotation.h */,
+				68339F681AAF3735005D4E48 /* PersonAnnotation.m */,
 				68339F431AAF26A7005D4E48 /* Images.xcassets */,
 				68339F451AAF26A7005D4E48 /* LaunchScreen.xib */,
 				68339F361AAF26A7005D4E48 /* Supporting Files */,
@@ -234,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68339F691AAF3735005D4E48 /* PersonAnnotation.m in Sources */,
 				68339F641AAF30BA005D4E48 /* MapDetailViewController.m in Sources */,
 				68339F5E1AAF26BB005D4E48 /* PersonController.m in Sources */,
 				68339F3F1AAF26A7005D4E48 /* ViewController.m in Sources */,
