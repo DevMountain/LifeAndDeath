@@ -14,11 +14,15 @@
 
 @synthesize coordinate;
 
+// Returns custom annotation subclass (PersonAnnotation)
 - (PersonAnnotation *)initWithPerson:(Person *)person lifeEvent:(LifeEvent)event {
     self = [super init];
     
-    if (self) {
-        switch (event) {
+    if (self)
+    {
+        // Depending on LifeEvent (Birth/Death), sets appropriate annotation properties
+        switch (event)
+        {
             case LifeEventBirth:
                 coordinate = person.birthPlace.coordinate;
                 self.title = [NSString stringWithFormat:@"The birthplace of %@ %@", person.firstName, person.lastName];

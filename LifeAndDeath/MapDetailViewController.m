@@ -25,6 +25,7 @@
     [self updateWithPerson:self.person];
 }
 
+// Sets person property on ViewController, checks person for birth/deathplace and adds custom annotation to mapView
 - (void)updateWithPerson:(Person *)person {
     self.person = person;
     
@@ -37,6 +38,7 @@
     }
 }
 
+// MKMapViewDelegate method that returns view for MKAnnotation
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
     MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"personAnnotation"];
