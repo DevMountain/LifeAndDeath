@@ -32,6 +32,6 @@ typedef NS_ENUM(NSUInteger, LifeEvent) {
 @property (strong, nonatomic) NSString *deathDate;
 @property (strong, nonatomic) CLLocation *deathPlace;
 
-- (Person *)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
