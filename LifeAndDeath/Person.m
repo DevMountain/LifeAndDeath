@@ -10,36 +10,36 @@
 
 @implementation Person
 
-- (Person *)initWithDictionary:(NSDictionary *)dictionary {
-    Person *person = [super init];
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+     self = [super init];
     
     if (dictionary[FirstNameKey]) {
-        person.firstName = dictionary[FirstNameKey];
+        self.firstName = dictionary[FirstNameKey];
     }
     
     if (dictionary[LastNameKey]) {
-        person.lastName = dictionary[LastNameKey];
+        self.lastName = dictionary[LastNameKey];
     }
     
     if (dictionary[BirthDateKey]) {
-        person.birthDate = dictionary[BirthDateKey];
+        self.birthDate = dictionary[BirthDateKey];
     }
     
     if ([dictionary[BirthPlaceKey] class] == [CLLocation class]) {
-        person.birthPlace = dictionary[BirthPlaceKey];
+        self.birthPlace = dictionary[BirthPlaceKey];
     }
     
     if (dictionary[DeathDateKey]) {
-        person.deathDate = dictionary[DeathDateKey];
+        self.deathDate = dictionary[DeathDateKey];
     } else {
-        person.deathDate = @"N/A";
+        self.deathDate = @"N/A";
     }
     
     if ([dictionary[DeathPlaceKey] class] == [CLLocation class]) {
-        person.deathPlace = dictionary[DeathPlaceKey];
+        self.deathPlace = dictionary[DeathPlaceKey];
     }
     
-    return person;
+    return self;
 }
 
 @end
